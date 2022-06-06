@@ -19,8 +19,8 @@ data = [
 
 @app.route('/api', methods=['GET'])
 def get_data():
-    return json.dumps(data)
+    return jsonify(data)
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
