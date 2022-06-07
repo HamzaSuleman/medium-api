@@ -17,13 +17,12 @@ data = [
     "body": "est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla"
   },]
 
-@app.route('/api', methods=['GET'])
-def get_data():
+@app.route('/')
+def index():
     return jsonify(data)
 
 if __name__ == "__main__":
-    from waitress import serve
-    serve(app, host="0.0.0.0", port=8080)
+    app.run()
 
 #if __name__ == '__main__':
 #    app.run()
