@@ -1,29 +1,41 @@
-from crypt import methods
-
 from flask import Flask, jsonify, make_response
 
 app = Flask(__name__)
 
-data = [
-  {
-    "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto",
-    "id": 1,
-    "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
-    "userId": 1
+orders = {
+  "order1": {
+    "Size": "Small",
+    "Toppings":"Cheese",
+    "Crust":"Thin Crust",
   },
-  {
-    "body": "est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla",
-    "id": 2,
-    "title": "qui est esse",
-    "userId": 1
+  "order2": {
+    "Size": "Large",
+    "Toppings":"Cheese",
+    "Crust":"Stuffed Crust",
   }
-]
+}
 
-@app.route('/api', methods=['GET'])
+@app.route('/')
 def get():
-    response = make_response(jsonify(data), 200)
+    response = make_response(jsonify(orders), 200)
     return response
 
+@app.route('/<orderid>')
+def get_order(orderid):
+  if orderid in orders:
+    response = make_response(jsonify(orders[orderid]), 200)
+    return response
+  else:
+    return 'No such data exists'
+
+@app.route('/<orderid>/<items>')
+def get_order_item(orderid, items):
+  item = orders[orderid].get(items)
+  if item:
+    response = make_response(jsonify(item), 200)
+    return response
+  else:
+    return 'No such data exists'
 
 if __name__ == '__main__':
     app.run() 
