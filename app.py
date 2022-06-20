@@ -12,7 +12,32 @@ orders = [
     "Size": "Large",
     "Toppings":"Cheese",
     "Crust":"Stuffed Crust",
-  }
+  },
+   {
+    "Size": "Small",
+    "Toppings":"Cheese",
+    "Crust":"Thin Crust",
+  },
+   {
+    "Size": "Small",
+    "Toppings":"Cheese",
+    "Crust":"Thin Crust",
+  },
+   {
+    "Size": "Small",
+    "Toppings":"Cheese",
+    "Crust":"Thin Crust",
+  },
+   {
+    "Size": "Small",
+    "Toppings":"Cheese",
+    "Crust":"Thin Crust",
+  },
+   {
+    "Size": "Small",
+    "Toppings":"Cheese",
+    "Crust":"Thin Crust",
+  },
 ]
 
 @app.route('/')
