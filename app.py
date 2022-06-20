@@ -14,9 +14,24 @@ orders = [
     "Crust":"Stuffed Crust",
   },
    {
-    "Size": "Small",
+    "Size": "XL",
     "Toppings":"Cheese",
     "Crust":"Thin Crust",
+  },
+   {
+    "Size": "Large",
+    "Toppings":"Mushrooms",
+    "Crust":"Pan Crust",
+  },
+   {
+    "Size": "Small",
+    "Toppings":"pork",
+    "Crust":"Thin Crust",
+  },
+   {
+    "Size": "XXL",
+    "Toppings":"Chicken",
+    "Crust":"Kabab Crust",
   },
    {
     "Size": "Small",
@@ -36,6 +51,26 @@ orders = [
    {
     "Size": "Small",
     "Toppings":"Cheese",
+    "Crust":"Thin Crust",
+  },
+    {
+    "Size": "Large",
+    "Toppings":"Cheese",
+    "Crust":"Stuffed Crust",
+  },
+   {
+    "Size": "XL",
+    "Toppings":"Cheese",
+    "Crust":"Thin Crust",
+  },
+   {
+    "Size": "Large",
+    "Toppings":"Mushrooms",
+    "Crust":"Pan Crust",
+  },
+   {
+    "Size": "Small",
+    "Toppings":"pork",
     "Crust":"Thin Crust",
   },
 ]
