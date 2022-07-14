@@ -1,6 +1,5 @@
 from flask import Flask, jsonify, make_response
 import pandas as pd
-import json
 
 app = Flask(__name__)
 
@@ -11,9 +10,9 @@ data = []
 
 for i in range(framelength):
     data.append(
-    {
+    {   
         'name': df['name'].loc[i],
-        'marks': str(df['marks'].loc[i]),
+        'marks': int(df['marks'].loc[i]),
         'city': df['city'].loc[i]
     })
 #print(data)
