@@ -2,12 +2,12 @@ import pandas as pd
 
 def get_plan(planFileName):
     #Calling Data From excel
-    Breakfast = pd.read_excel(planFileName,'Breakfast')
-    Snack1 = pd.read_excel(planFileName,'Snack#1')
-    Lunch = pd.read_excel(planFileName,'Lunch')
-    Snack2 = pd.read_excel(planFileName,'Snack#2')
-    Dinner = pd.read_excel(planFileName,'Dinner')
-    Total = pd.read_excel(planFileName,'Total')
+    Breakfast = pd.read_csv('Diet-Plans/'+planFileName+'/Breakfast.csv')
+    Snack1 = pd.read_csv('Diet-Plans/'+planFileName+'/Snack1.csv')
+    Lunch = pd.read_csv('Diet-Plans/'+planFileName+'/Lunch.csv')
+    Snack2 = pd.read_csv('Diet-Plans/'+planFileName+'/Snack2.csv')
+    Dinner = pd.read_csv('Diet-Plans/'+planFileName+'/Dinner.csv')
+    Total = pd.read_csv('Diet-Plans/'+planFileName+'/Total.csv')
 
     #Rest Function which creates data
     plan = []
@@ -58,8 +58,8 @@ def get_plan(planFileName):
     return plan
 
 def get_fullplan(planFileName):
-    Plan = pd.read_excel(planFileName)
-    Total = pd.read_excel(planFileName,'Total')
+    Plan = pd.read_csv('Diet-Plans/'+planFileName+'/Bulking Plan.csv')
+    Total = pd.read_csv('Diet-Plans/'+planFileName+'/Total.csv')
     return {
     'name': Plan['Plan Name'].loc[0],
     'total_plan_calories_consume': int(Total['Total Day Calories'].loc[30]),

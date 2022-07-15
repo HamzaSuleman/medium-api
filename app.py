@@ -4,7 +4,7 @@ from flask import Flask, jsonify, make_response
 app = Flask(__name__)
 
 plans = []
-plans.append(get_fullplan('Bulking Plan.xlsx'))
+plans.append(get_fullplan('Bulking-Plan'))
 
 @app.route('/')
 def get():
