@@ -13,7 +13,7 @@ def get_plan(planFileName):
     plan = []
     for i in range(30):
        plan.append({
-            str('Day'+int(Total['Day'].loc[i])):{
+            str('Day'+str(int(Total['Day'].loc[i]))):{
                 'Breakfast':{
                 'Quantity_Item1': str(Breakfast['Quantity Item1'].loc[i]),
                 'Description_Item1': Breakfast['Description Item1'].loc[i],
