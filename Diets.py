@@ -60,9 +60,9 @@ def get_plan(planFileName):
 def get_fullplan(planFileName):
     Plan = pd.read_csv('Diet-Plans/'+planFileName+'/Bulking Plan.csv')
     Total = pd.read_csv('Diet-Plans/'+planFileName+'/Total.csv')
-    return {
+    return (Plan['Plan Name'].loc[0]: {
     'name': Plan['Plan Name'].loc[0],
     'total_plan_calories_consume': int(Total['Total Day Calories'].loc[30]),
     'total_plan_calories_burn': int(Total['Calories Burn'].loc[30]),
     'days': get_plan(planFileName)
-    }
+    })
