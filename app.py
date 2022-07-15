@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 plans = {}
 type = ['Bulking-Plan']
-plans['Paklife'+type[0]] = get_fullplan(type[0])
+plans['Paklife '+type[0]] = get_fullplan(type[0])
 
 @app.route('/')
 def get():
