@@ -12,7 +12,7 @@ def get_plan(planFileName):
     #Rest Function which creates data
     plan = {}
     for i in range(30):
-       plan[i] = 
+       plan[i] = {
             'Day'+str(int(Total['Day'].loc[i])):{
                 'Breakfast':{
                 'Quantity_Item1': str(Breakfast['Quantity Item1'].loc[i]),
@@ -53,7 +53,7 @@ def get_plan(planFileName):
                 'Calories_Consume': int(Total['Total Day Calories'].loc[i]),
                 'Calories_Burn': int(Total['Calories Burn'].loc[i]),
                 },
-        },
+        },}
     #print(plans)
     return plan
 
