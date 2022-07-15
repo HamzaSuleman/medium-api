@@ -10,9 +10,9 @@ def get_plan(planFileName):
     Total = pd.read_csv('Diet-Plans/'+planFileName+'/Total.csv')
 
     #Rest Function which creates data
-    plan = []
+    plan = {}
     for i in range(30):
-       plan.append({
+       plan[i] = {
             'Day'+str(int(Total['Day'].loc[i])):{
                 'Breakfast':{
                 'Quantity_Item1': str(Breakfast['Quantity Item1'].loc[i]),
