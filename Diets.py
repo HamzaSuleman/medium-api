@@ -10,50 +10,51 @@ def get_plan(planFileName):
     Total = pd.read_csv('Diet-Plans/'+planFileName+'/Total.csv')
 
     #Rest Function which creates data
-    plan = {}
+    plan = []
     for i in range(30):
-       plan['Day'+str(int(Total['Day'].loc[i]))] = {
-            
+        
+       plan.append({
+                'Day': int(Total['Day'].loc[i]),
                 'Breakfast':{
                 'Quantity_Item1': str(Breakfast['Quantity Item1'].loc[i]),
                 'Description_Item1': Breakfast['Description Item1'].loc[i],
                 'Quantity_Item2': str(Breakfast['Quantity Item2'].loc[i]),
-                'Description_Item2': Breakfast['Description Item2'].loc[i],
+                'Description_Item1': Breakfast['Description Item1'].loc[i],
                 'Calories': int(Breakfast['Calories'].loc[i]),
                 },
                 'Snack1':{
                 'Quantity_Item1': str(Snack1['Quantity Item1'].loc[i]),
                 'Description_Item1': Snack1['Description Item1'].loc[i],
                 'Quantity_Item2': str(Snack1['Quantity Item2'].loc[i]),
-                'Description_Item2': Breakfast['Description Item2'].loc[i],
+                'Description_Item1': Snack1['Description Item1'].loc[i],
                 'Calories': int(Snack1['Calories'].loc[i]),
                 },
                 'Lunch':{
                 'Quantity_Item1': str(Lunch['Quantity Item1'].loc[i]),
                 'Description_Item1': Lunch['Description Item1'].loc[i],
                 'Quantity_Item2': str(Lunch['Quantity Item2'].loc[i]),
-                'Description_Item2': Breakfast['Description Item2'].loc[i],
+                'Description_Item1': Lunch['Description Item1'].loc[i],
                 'Calories': int(Lunch['Calories'].loc[i]),
                 },
                 'Snack2':{
                 'Quantity_Item1': str(Snack2['Quantity Item1'].loc[i]),
                 'Description_Item1': Snack2['Description Item1'].loc[i],
                 'Quantity_Item2': str(Snack2['Quantity Item2'].loc[i]),
-                'Description_Item2': Breakfast['Description Item2'].loc[i],
+                'Description_Item1': Snack2['Description Item1'].loc[i],
                 'Calories': int(Snack2['Calories'].loc[i]),
                 },
                 'Dinner':{
                 'Quantity_Item1': str(Dinner['Quantity Item1'].loc[i]),
                 'Description_Item1': Dinner['Description Item1'].loc[i],
                 'Quantity_Item2': str(Dinner['Quantity Item2'].loc[i]),
-                'Description_Item2': Breakfast['Description Item2'].loc[i],
+                'Description_Item1': Dinner['Description Item1'].loc[i],
                 'Calories': int(Dinner['Calories'].loc[i]),
                 },
                 'Total':{
                 'Calories_Consume': int(Total['Total Day Calories'].loc[i]),
                 'Calories_Burn': int(Total['Calories Burn'].loc[i]),
                 },
-       }
+       })
     #print(plans)
     return plan
 
