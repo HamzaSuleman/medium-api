@@ -6,6 +6,10 @@ app = Flask(__name__)
 plans = []
 type = ['Bulking_Plan']
 plans.append(get_fullplan(type[0]))
+plans.append(get_fullplan(type[0]))
+plans.append(get_fullplan(type[0]))
+plans.append(get_fullplan(type[0]))
+plans.append(get_fullplan(type[0]))
 
 @app.route('/')
 def get():
