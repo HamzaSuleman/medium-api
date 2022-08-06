@@ -5,6 +5,7 @@ app = Flask(__name__)
 
 plans = []
 type = ['Weight_Loss_65kg','Bulking_Plan']
+
 for x in type:
    plans.append(get_fullplan(x))
 
