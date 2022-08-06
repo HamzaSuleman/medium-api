@@ -5,8 +5,8 @@ app = Flask(__name__)
 
 plans = []
 type = ['Weight_Loss_65kg','Bulking_Plan']
-plans.append(get_fullplan(type[0]))
-plans.append(get_fullplan(type[1]))
+for x in type:
+   plans.append(get_fullplan(x))
 
 
 @app.route('/')
