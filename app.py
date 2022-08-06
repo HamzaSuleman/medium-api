@@ -4,12 +4,10 @@ from flask import Flask, jsonify, make_response
 app = Flask(__name__)
 
 plans = []
-type = ['Bulking_Plan']
+type = ['Weight_Loss_65kg','Bulking_Plan']
 plans.append(get_fullplan(type[0]))
-plans.append(get_fullplan(type[0]))
-plans.append(get_fullplan(type[0]))
-plans.append(get_fullplan(type[0]))
-plans.append(get_fullplan(type[0]))
+plans.append(get_fullplan(type[1]))
+
 
 @app.route('/')
 def get():
