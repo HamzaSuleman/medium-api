@@ -1,0 +1,24 @@
+id,title,category,overview,gender,not_recommand,min_weight,max_weight,weight,min_age,max_age,age,tags
+1,Paklife Bulking,['Weight Gain'],"This Diet is for person weighing 55-75 kg.
+This Diet is to be used by a person to increase weight and to put on muscle at the same time.
+This person following this diet plan will gain approx. 0.5-0.7kg weight per week.
+All the Meals must be prepared with minimum quantity of oil and salt. 
+All the Meals must be prepared with and a good quantity of meat.","['Male','Female']","['Blood Pressure','Diabetes','Heart Disease']",55,75,[],18,35,[],
+2,Diabetic Loss,"['Weight Loss','Diabetic']","This Diet is for person who has diabetes and is weighing 75kg or above.
+This Diet is to be used by a person to lose weight and reduce fat at the same time.
+This person following this diet plan will lose approx. 0.5-0.7kg of body weight per week.
+All the meals are planned carefully with diets that do not make the condition of diabetes worse in any way.
+All the Meals must be prepared with minimum quantity of oil and salt. 
+","['Male','Female']",[],75,90,[],18,50,[],
+3,Weight Watchers,['Weight Loss'],"This Diet is for person weighing 75kg or above.
+This Diet is to be used by a person to lose weight and reduce fat at the same time.
+This person following this diet plan will lose approx. 0.5-0.7kg of body weight per week.
+All the Meals must be prepared with minimum quantity of oil and salt. 
+All the Meals must be prepared with and a good quantity of meat.
+",['Male'],['Diabetes'],75,100,[],18,45,[],
+4,Weight Loss,['Weight Loss'],"This Diet is for person weighing 60kg or above.
+This Diet is to be used by a person to lose weight and reduce fat at the same time.
+This person following this diet plan will lose approx. 0.5-0.7kg of body weight per week.
+All the Meals must be prepared with minimum quantity of oil and salt. 
+All the Meals must be prepared with and a good quantity of meat.
+",['Female'],['Diabetes'],60,75,[],18,45,[],
