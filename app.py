@@ -7,7 +7,7 @@ from Artificial_Intelligence.Recommander.recommander_test import tfidf_recommand
 app = Flask(__name__)
 
 plans = []
-type = ['Weight_Loss_80kg','Bulking_Plan','Weight_Loss_65kg','Weight_Loss_Diabetes']
+type = ['Weight_Loss_65kg','Weight_Loss_80kg','Bulking_Plan','Weight_Loss_Diabetes']
 for x in type:
    plans.append(get_fullplan(x))
 
