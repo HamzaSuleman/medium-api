@@ -93,7 +93,7 @@ def TimeSeriesAlgorithm(startDietWeight, currentDay, currentDiet, weightsTillNow
 
     # predicting weight from range start to end
     prediction = final_model.predict(len(ts_f)-1, len(ts)-1)
-    print(ts_f)
+    #print(ts_f)
     predictedWeights = []
     actualWeights = []
     for i in range(len(prediction)):
