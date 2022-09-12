@@ -1,5 +1,6 @@
 import pandas as pd
 from Diets import get_fullplan
+from Artificial_Intelligence.Predictor.Predictor import TimeSeriesAlgorithm
 
 def get_ActiveDiet(Diets, activeDietName):
 
@@ -17,24 +18,6 @@ def get_ActiveDiet(Diets, activeDietName):
             'days': []
             }
 
-
-def get_Recommanded_Diets2(Diets, recommandedDietList):
-
-    recommand_plans = []
-
-    print(Diets)
-    for j in range(len(Diets)):
-        name = str(Diets[j])
-
-        Plan = pd.read_csv('Diet-Plans/'+name+'/'+name+'.csv')
-        for i in range(0,len(recommandedDietList)):
-            if(Plan['Plan Name'].loc[0] == recommandedDietList[i]):
-                print(recommandedDietList[i])
-                recommand_plans.append(j)
-                print(recommand_plans)
-    
-    return recommand_plans
-
 def get_Recommanded_Diets(Diets, recommandedDietList):
 
     recommand_plans = []
@@ -44,3 +27,19 @@ def get_Recommanded_Diets(Diets, recommandedDietList):
             if(str(Plan['Plan Name'].loc[0]).strip() == recommandedDietList[i]):
                 recommand_plans.append(diet)
     return recommand_plans
+
+def get_TimeSeries_Values(startWeight, currentDay, activeDietName, weights):
+
+    Weights = TimeSeriesAlgorithm(startWeight, currentDay, activeDietName, weights)
+    return Weights
+
+def get_ActiveDiet_Total(Diets, activeDietName):
+    realActiveDietName = ''
+
+    for diet in Diets:
+        Plan = pd.read_csv('Diet-Plans/'+diet+'/'+diet+'.csv')
+        if(Plan['Plan Name'].loc[0] == activeDietName):
+            realActiveDietName = diet
+
+    currentDiet = pd.read_csv("Diet-Plans/"+realActiveDietName+"/Total.csv")
+    return currentDiet
