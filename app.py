@@ -43,12 +43,12 @@ def get_recommand_data(category, disease, disease2):
     return response
 
 
-@app.route('/predictor/<startWeight>/<currentDay>/<fname>/<lname>/<weights>')
-def get_predicted_weight_data(startWeight, currentDay, fname, lname, weights):
+@app.route('/predictor/<startWeight>/<currentDay>/<fname>/<lname>')
+def get_predicted_weight_data(startWeight, currentDay, fname, lname):
     
     activeDietName = (fname+" "+lname).strip()
     currentActiveDiet = get_ActiveDiet_Total(type, activeDietName)
-    #weights = [80.084757,80.173661,80.23,80.341101,80.4,80.45,80.647513,80.627513]
+    weights = [80.084757,80.173661,80.23,80.341101,80.4,80.45,80.647513,80.627513]
     TimeSeries = []
     TimeSeriesData = get_TimeSeries_Values(float(startWeight), int(currentDay), currentActiveDiet, weights)
     TimeSeries.append(TimeSeriesData)
