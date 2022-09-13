@@ -48,8 +48,8 @@ def get_predicted_weight_data(startWeight, currentDay, fname, lname, weights):
     
     activeDietName = (fname+" "+lname).strip()
     currentActiveDiet = get_ActiveDiet_Total(type, activeDietName)
-    print(weights)
-    weights = [80.084757,80.173661,80.23,80.341101,80.4,80.45,80.647513,80.627513]
+    #print(weights)
+    #weights = [80.084757,80.173661,80.23,80.341101,80.4,80.45,80.647513,80.627513]
     TimeSeries = []
     TimeSeriesData = get_TimeSeries_Values(float(startWeight), int(currentDay), currentActiveDiet, list(weights))
     TimeSeries.append(TimeSeriesData)
