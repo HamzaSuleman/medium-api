@@ -1,4 +1,5 @@
 from Diets import get_fullplan
+import ast
 from functions import get_ActiveDiet, get_ActiveDiet_Total, get_Recommanded_Diets, get_TimeSeries_Values
 from flask import Flask, jsonify, make_response
 from Artificial_Intelligence.Recommander.recommander_test import tfidf_recommand
@@ -48,6 +49,7 @@ def get_predicted_weight_data(startWeight, currentDay, fname, lname, weights):
     
     activeDietName = (fname+" "+lname).strip()
     currentActiveDiet = get_ActiveDiet_Total(type, activeDietName)
+    weights = ast.literal_eval(weights)
     #print(weights)
     #weights = [80.084757,80.173661,80.23,80.341101,80.4,80.45,80.647513,80.627513]
     TimeSeries = []
