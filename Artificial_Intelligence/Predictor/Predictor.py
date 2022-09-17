@@ -17,27 +17,9 @@ def get_ActiveDiet_Chart(Diets, activeDietName):
 type = ['Weight_Loss_80kg','Bulking_Plan','Weight_Loss_65kg','Weight_Loss_Diabetes']
 
 
-weights = [80.084757,
-80.173661,
-80.23,
-80.341101,
-80.4,
-80.45,
-80.647513,
-80.627513,
-80.742
-]
+#weights = [80.084757,80.173661,80.23,80.341101,80.4,80.45,80.647513,80.627513,80.742]
 
-weights1 = [79.919649,
-79.824525,
-79.733806,
-79.680023,
-79.608485,
-79.58,
-79.55,
-79.37,
-
-]
+#weights1 = [79.919649,79.824525,79.733806,79.680023,79.608485,79.58,79.55,79.37]
 
 
 def TimeSeriesAlgorithm(startDietWeight, currentDay, currentDiet, weightsTillNow):
@@ -66,7 +48,11 @@ def TimeSeriesAlgorithm(startDietWeight, currentDay, currentDiet, weightsTillNow
 
     # user data recieve from app
     ts_user = df['user_weight'].resample('D').sum()
-    ts_user = ts_user[:currentDay-1]
+    
+    if(currentDay <= 1)
+        ts_user = ts_user[:currentDay]
+    else:
+        ts_user = ts_user[:currentDay-1]
 
     # find order or arima model
     p=d=q = range(0,3)
