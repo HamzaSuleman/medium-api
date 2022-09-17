@@ -48,11 +48,7 @@ def TimeSeriesAlgorithm(startDietWeight, currentDay, currentDiet, weightsTillNow
 
     # user data recieve from app
     ts_user = df['user_weight'].resample('D').sum()
-    
-    if(currentDay <= 1)
-        ts_user = ts_user[:currentDay]
-    else:
-        ts_user = ts_user[:currentDay-1]
+    ts_user = ts_user[:currentDay-1]
 
     # find order or arima model
     p=d=q = range(0,3)
