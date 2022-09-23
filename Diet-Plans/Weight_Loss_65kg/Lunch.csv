@@ -1,7 +1,7 @@
 Day,Quantity Item1,Description Item1,Quantity Item2,Description Item2,Calories
 1,1,Beef Steak,100gm, Mixed vegetables,710
 2,150gm,Cooked chicken,100gm,Mixed vegetables,700
-3,200gm,Chicken/Beef Biryani,None,None,680
+3,200gm,Chicken/Beef Biryani, ,None,680
 4,1,Beef Steak,100gm,Mixed vegetables,710
 5,1,Beef Steak,100gm,Mixed vegetables,710
 6,150gm,Cooked chicken,100gm,Mixed vegetables,700
@@ -9,7 +9,7 @@ Day,Quantity Item1,Description Item1,Quantity Item2,Description Item2,Calories
 8,200gm ,Beef Pulao,1,Raita,650
 9,1,Beef Steak,100gm,Mixed vegetables,710
 10,150gm,Cooked chicken,100gm,Mixed vegetables,700
-11,200gm,Chicken/Beef Biryani,None,None,680
+11,200gm,Chicken/Beef Biryani, ,None,680
 12,150gm,Cooked chicken,100gm,Mixed vegetables,700
 13,1,Beef Steak,100gm,Mixed vegetables,710
 14,150gm,Cooked chicken,100gm,Mixed vegetables,700
@@ -17,7 +17,7 @@ Day,Quantity Item1,Description Item1,Quantity Item2,Description Item2,Calories
 16,1,Beef Steak,100gm,Mixed vegetables,710
 17,150gm,Cooked chicken,100gm,Mixed vegetables,700
 18,1,Beef Steak,100gm,Mixed vegetables,710
-19,200gm,Chicken/Beef Biryani,None,None,680
+19,200gm,Chicken/Beef Biryani, ,None,680
 20,150gm,Cooked chicken,100gm,Mixed vegetables,700
 21,1,Beef Steak,100gm,Mixed vegetables,710
 22,1,Beef Steak,100gm,Mixed vegetables,710
@@ -26,6 +26,6 @@ Day,Quantity Item1,Description Item1,Quantity Item2,Description Item2,Calories
 25,1,Beef Steak,100gm,Mixed vegetables,710
 26,150gm,Cooked chicken,100gm,Mixed vegetables,700
 27,150gm,Cooked chicken,100gm,Mixed vegetables,700
-28,200gm,Chicken/Beef Biryani,None,None,680
+28,200gm,Chicken/Beef Biryani, ,None,680
 29,150gm,Cooked chicken,100gm,Mixed vegetables,700
 30,1,Beef Steak,100gm,Mixed vegetables,710

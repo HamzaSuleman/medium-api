@@ -14,12 +14,30 @@ def get_ActiveDiet_Chart(Diets, activeDietName):
         if(Plan['Plan Name'].loc[0] == activeDietName):
             return diet
 
-type = ['Weight_Loss_80kg','Bulking_Plan','Weight_Loss_65kg','Weight_Loss_Diabetes']
+#type = ['Weight_Loss_80kg','Bulking_Plan','Weight_Loss_65kg','Weight_Loss_Diabetes']
+type = ['Bulking_80+','Bulking_Plan','Muscle_Gain_Diabetes','Vegan_Weight_Loss60','Vegan_Weight_Loss80','Keto_Diet','Weight_Loss_65kg','Weight_Loss_80kg','Weight_Loss_100kg','Weight_Loss_Diabetes']
 
+weights = [80.084757,
+80.173661,
+80.23,
+80.341101,
+80.4,
+80.45,
+80.647513,
+80.627513,
+80.742
+]
 
-#weights = [80.084757,80.173661,80.23,80.341101,80.4,80.45,80.647513,80.627513,80.742]
+weights1 = [79.919649,
+79.824525,
+79.733806,
+79.680023,
+79.608485,
+79.58,
+79.55,
+79.37,
 
-#weights1 = [79.919649,79.824525,79.733806,79.680023,79.608485,79.58,79.55,79.37]
+]
 
 
 def TimeSeriesAlgorithm(startDietWeight, currentDay, currentDiet, weightsTillNow):

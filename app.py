@@ -2,13 +2,17 @@ from Diets import get_fullplan
 import ast
 from functions import get_ActiveDiet, get_ActiveDiet_Total, get_Recommanded_Diets, get_TimeSeries_Values
 from flask import Flask, jsonify, make_response
-from Artificial_Intelligence.Recommander.recommander_test import tfidf_recommand
+from Artificial_Intelligence.Recommander.recommander import tfidf_recommand
 
 
 app = Flask(__name__)
 
 plans = []
-type = ['Weight_Loss_80kg','Bulking_Plan','Weight_Loss_65kg','Weight_Loss_Diabetes']
+#type = ['Vegan_Weight_Loss60','Muscle_Gain_Diabetes','Bulking_80+']
+type = ['Bulking_80+','Bulking_Plan','Muscle_Gain_Diabetes','Vegan_Weight_Loss60','Vegan_Weight_Loss80','Keto_Diet','Weight_Loss_65kg','Weight_Loss_80kg','Weight_Loss_100kg','Weight_Loss_Diabetes']
+#type = ['Bulking_80+','Bulking_Plan','Muscle_Gain_Diabetes','Keto_Diet','Vegan_Weight_Loss60','Weight_Loss_65kg','Weight_Loss_80kg','Weight_Loss_Diabetes']
+
+
 for x in type:
    plans.append(get_fullplan(x))
 

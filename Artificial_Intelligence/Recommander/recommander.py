@@ -8,7 +8,7 @@ from sklearn.metrics.pairwise import linear_kernel
 from nltk.stem import PorterStemmer
 ps = PorterStemmer()
 
-diets = pd.read_csv('diet_properties_test.csv') 
+diets = pd.read_csv('diet_properties.csv') 
 
 # fill empty spaces
 diets['tags'] = diets['tags'].fillna('')
