@@ -8,36 +8,25 @@ warnings.filterwarnings('ignore')
 
 thousand_cal_in_grams = 129.59782
 
-def get_ActiveDiet_Chart(Diets, activeDietName):
+def get_ActiveDiet_Total(Diets, activeDietName):
+    realActiveDietName = ''
+
     for diet in Diets:
-        Plan = pd.read_csv('/Diet-Plans/'+diet+'/'+diet+'.csv')
+        Plan = pd.read_csv('../../Diet-Plans/'+diet+'/'+diet+'.csv')
         if(Plan['Plan Name'].loc[0] == activeDietName):
-            return diet
+            realActiveDietName = diet
+
+    currentDiet = pd.read_csv("../../Diet-Plans/"+realActiveDietName+"/Total.csv")
+    return currentDiet
 
 #type = ['Weight_Loss_80kg','Bulking_Plan','Weight_Loss_65kg','Weight_Loss_Diabetes']
 type = ['Bulking_80+','Bulking_Plan','Muscle_Gain_Diabetes','Vegan_Weight_Loss60','Vegan_Weight_Loss80','Keto_Diet','Weight_Loss_65kg','Weight_Loss_80kg','Weight_Loss_100kg','Weight_Loss_Diabetes']
 
-weights = [80.084757,
-80.173661,
-80.23,
-80.341101,
-80.4,
-80.45,
-80.647513,
-80.627513,
-80.742
-]
+#weights = [80.084757, 80.173661,80.23,80.341101,80.4,80.45,80.647513,80.627513,80.742]
 
-weights1 = [79.919649,
-79.824525,
-79.733806,
-79.680023,
-79.608485,
-79.58,
-79.55,
-79.37,
+#weights1 = [79.919649,79.824525,79.733806,79.680023,79.608485,79.58,79.55,79.37,]
 
-]
+#weights3 = [70,70,69.7,69.4,69.3] 
 
 
 def TimeSeriesAlgorithm(startDietWeight, currentDay, currentDiet, weightsTillNow):
@@ -89,10 +78,13 @@ def TimeSeriesAlgorithm(startDietWeight, currentDay, currentDiet, weightsTillNow
 
     # training model with user all weights till now
     ts_f = ts_user
-    final_model = ARIMA(ts_f, order=orderArima).fit()
+    try:
+        final_model = ARIMA(ts_f, order=orderArima).fit()
 
     # predicting weight from range start to end
-    prediction = final_model.predict(len(ts_f)-1, len(ts)-1)
+        prediction = final_model.predict(len(ts_f)-1, len(ts)-1)
+    except:
+        prediction = []
     #print(ts_f)
     predictedWeights = []
     actualWeights = []
@@ -101,12 +93,22 @@ def TimeSeriesAlgorithm(startDietWeight, currentDay, currentDiet, weightsTillNow
     for i in range(len(ts)):
         actualWeights.append(round(ts.iloc[i],2))
 
-    return {
+    if(currentDay >= 5):
+       return {
             'weights': weightsTillNow,
             'predicted Weights': predictedWeights,
             'Actual Weights': actualWeights,
             }
     
+    else: 
+       return {
+            'weights': weightsTillNow,
+            'predicted Weights': [],
+            'Actual Weights': actualWeights,
+            }
+    
+#weightList = []
+#for i in range(5):
+#    weightList.append(weights3[i])
 
-
-#TimeSeriesAlgorithm(80, 9, 'Paklife Bulking', weights)
+#print(TimeSeriesAlgorithm(80, 5,get_ActiveDiet_Total(type,'Weight Loss') , weightList))
