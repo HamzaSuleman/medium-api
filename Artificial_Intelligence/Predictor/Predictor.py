@@ -94,6 +94,8 @@ def TimeSeriesAlgorithm(startDietWeight, currentDay, currentDiet, weightsTillNow
         actualWeights.append(round(ts.iloc[i],2))
 
     if(currentDay >= 5):
+       if(pd.isna(float(predictedWeights[0])) == True):
+          predictedWeights = []
        return {
             'weights': weightsTillNow,
             'predicted Weights': predictedWeights,
